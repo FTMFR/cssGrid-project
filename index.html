@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <title>CSS grid</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="cssReset.css" />
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+      }
+      .conteiner {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .top-header {
+        background-color: #e74c3c;
+        height: 55px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+      }
+
+      .header-menu {
+        background-color: #33495e;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        list-style: none;
+        color: white;
+      }
+
+      .header-menu li {
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+        grid-gap: 10px;
+      }
+
+      .course {
+        height: 150px;
+        background-color: #2580b9;
+      }
+
+      .footer {
+        background-color: #7f8c8d;
+        height: 40px;
+      }
+
+      @media only screen and (min-width: 500px) {
+        .content {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media only screen and (min-width: 900px) {
+        .content {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="top-header">
+          <h2>مجله آموزشی راکت</h2>
+          <span>عضویت/ورود</span>
+        </div>
+        <ul class="header-menu">
+          <li>صفحه اصلی</li>
+          <li>درباره ما</li>
+          <li>تماس با ما</li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="course">course 1</div>
+        <div class="course">course 2</div>
+        <div class="course">course 3</div>
+        <div class="course">course 4</div>
+        <div class="course">course 5</div>
+        <div class="course">course 6</div>
+        <div class="course">course 7</div>
+        <div class="course">course 8</div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
